@@ -1,0 +1,27 @@
+<svg width="<!--WIDTH-->" height="<!--HEIGHT-->" version="1.1" xmlns="http://www.w3.org/2000/svg">
+<style>/*<![CDATA[*/
+svg { background: #dff; }
+path { vector-effect: non-scaling-stroke; }
+.country, .prefectures, .railroads {
+  fill: none;
+  stroke-width: 0.5px;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+.country { stroke: #000; }
+.prefectures { stroke: #aaaaaa; fill: #f3f3f3; }
+.railroads { stroke-width: 1px; }
+.railroads [data-type="1"] { stroke: #0473bd; stroke-width: 2px; } /* Shinkansen */
+.railroads [data-type="2"] { stroke: #188847; stroke-width: 1.5px; } /* JR Local Line */
+.railroads [data-type="3"] { stroke: #e40112; } /* Government Railway */
+.railroads [data-type="4"] { stroke: #e40112; } /* Private Railway */
+.railroads [data-type="5"] { stroke: #e40112; } /* Third Sector */
+/*]]>*/</style>
+<g class="container" transform="<!--transform-->">
+<g class="prefectures"><!--pathPrefectures--></g>
+<g class="country"><!--pathCountry--></g>
+<g class="railroads"><!--railroads--></g>
+</g>
+<!--textYear-->
+<!--graph-->
+</svg>
