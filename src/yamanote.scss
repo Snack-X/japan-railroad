@@ -1,5 +1,9 @@
 @import '_reset';
 
+body {
+  font-family: 'Noto Sans JP';
+}
+
 .controls {
   height: 80px;
 
@@ -57,7 +61,7 @@
   }
 
   .label {
-    font: 900 35px 'Noto Sans CJK JP';
+    font: 900 35px 'Noto Sans JP';
     letter-spacing: -1px;
   }
 
