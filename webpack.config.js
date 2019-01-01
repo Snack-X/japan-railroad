@@ -27,7 +27,7 @@ const config = {
   },
   output: {
     filename: 'js/[name].js',
-    publicPath: '/dist/',
+    publicPath: 'dist/',
   },
   module: {
     rules: [
