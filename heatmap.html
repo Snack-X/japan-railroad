@@ -2,64 +2,15 @@
 <html>
 
 <head>
-  <meta charset="UTF-8">
-  <title>Japan Railroad Passengers Heatmap</title>
-  <style>
-    * { margin: 0; padding: 0; }
-    html, body, #google-map { width: 100%; height: 100%; }
-  </style>
-</head>
+<meta charset="UTF-8">
+<title>Japan Railroad - Passengers Heatmap</title>
+<link href="/dist/css/heatmap.css?hash=a49116" rel="stylesheet"></head>
 
 <body>
+<div class="controls">
+  <label>Radius</label> <input type="range" id="range-radius" min="5" max="30" value="10"><br>
+  <label>Intensity</label> <input type="range" id="range-intensity" min="1" max="10" value="10">
+</div>
 <div id="google-map"></div>
-<script>
-function init() {
-  (async function() { await main(); })()
-    .then(() => {})
-    .catch(e => { console.error(e); });
-}
-
-async function main() {
-  window.googleMap = new google.maps.Map(document.getElementById("google-map"), {
-    center: { lat: 37, lng: 137 },
-    zoom: 5,
-  });
-
-  const res = await fetch("data/S12-16_NumberOfPassengers.geojson");
-  const json = await res.json();
-
-  const heatmapRawData = [];
-  let heatmapMax = -Infinity;
-
-  for(const feature of json.features) {
-    if(feature.properties["有無2015"] !== 1) continue;
-    if(feature.properties["重複2015"] !== 1) continue;
-
-    let number = feature.properties["乗降客数15"];
-    if(number === 0) continue;
-    number = Math.log(number);
-
-    const bound = new google.maps.LatLngBounds();
-    for(const coordinate of feature.geometry.coordinates)
-      bound.extend({ lat: coordinate[1], lng: coordinate[0] });
-
-    const center = bound.getCenter();
-    heatmapRawData.push({ location: center, value: number });
-    if(heatmapMax < number) heatmapMax = number;
-  }
-
-  const heatmapData = heatmapRawData.map(row => {
-    row.weight = row.value / heatmapMax;
-    return row;
-  });
-
-  window.heatmap = new google.maps.visualization.HeatmapLayer({
-    data: heatmapData,
-    map: window.googleMap,
-  });
-}
-</script>
-<!-- <script src="https://maps.googleapis.com/maps/api/js?callback=init&libraries=visualization"></script> -->
-<script src="https://maps.googleapis.com/maps/api/js?callback=init&libraries=visualization&key=AIzaSyDXfYkzPkfNqI8ZjHsgzuraxhOjMsPg-O8"></script>
-</body>
+<script type="text/javascript" src="/dist/js/heatmap.js?hash=01a977"></script></body>
 </html>

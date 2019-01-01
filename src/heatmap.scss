@@ -1,0 +1,29 @@
+@import '_reset';
+
+html, body, #google-map {
+  width: 100%; height: 100%;
+}
+
+.controls {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  padding: 8px;
+  z-index: 10;
+  background-color: rgba(#000000, 0.5);
+  color: #ffffff;
+  transform: translateX(-50%);
+
+  label {
+    display: inline-block;
+    width: 75px;
+    text-align: right;
+    vertical-align: middle;
+  }
+
+  input {
+    width: 200px;
+    text-align: left;
+    vertical-align: middle;
+  }
+}

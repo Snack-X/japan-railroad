@@ -1,0 +1,87 @@
+@import '_reset';
+
+.controls {
+  height: 80px;
+
+  .time {
+    float: left;
+    width: 160px;
+    line-height: 80px;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 900;
+  }
+
+  .slider, .options {
+    float: right;
+    padding: 10px 10px 10px 0;
+    width: calc(100% - 160px);
+    height: 40px;
+  }
+
+  .slider {
+    padding-bottom: 5px;
+
+    input {
+      width: 100%;
+    }
+  }
+
+  .options {
+    padding-top: 5px;
+
+    label + label {
+      margin-left: 1rem;
+    }
+  }
+}
+
+.output {
+  height: calc(100vh - 80px);
+  text-align: center;
+}
+
+.output-svg {
+  height: 100%;
+  
+  .line {
+    stroke: #8de75c;
+    stroke-width: 30;
+    fill: none;
+  }
+
+  .station {
+    stroke: #8de75c;
+    stroke-width: 10;
+    fill: #ffffff;
+  }
+
+  .label {
+    font: 900 35px 'Noto Sans CJK JP';
+    letter-spacing: -1px;
+  }
+
+  .bottom .label {
+    text-anchor: middle;
+    transform: translateY(110px);
+  }
+
+  .right .label {
+    text-anchor: start;
+    transform: translate(70px, 12px);
+  }
+
+  .top .label {
+    text-anchor: middle;
+    transform: translateY(-80px);
+  }
+
+  .left .label {
+    text-anchor: end;
+    transform: translate(-75px, 12px);
+  }
+
+  .trains .train {
+    transform: scale(0.4) translate(-77px, -76.5px);
+  }  
+}
