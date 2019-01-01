@@ -24,6 +24,7 @@ const config = {
   entry: {
     heatmap: './src/heatmap.js',
     yamanote: './src/yamanote.js',
+    yamanote2: './src/yamanote2.js',
   },
   output: {
     filename: 'js/[name].js',
@@ -53,6 +54,7 @@ const config = {
   plugins: [
     getHtmlPlugin('heatmap.html', [ 'heatmap' ]),
     getHtmlPlugin('yamanote.html', [ 'yamanote' ]),
+    getHtmlPlugin('yamanote2.html', [ 'yamanote2' ]),
     new HtmlWebpackHarddiskPlugin(),
   ],
   devServer: {

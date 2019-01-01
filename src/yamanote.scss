@@ -1,8 +1,4 @@
-@import '_reset';
-
-body {
-  font-family: 'Noto Sans JP';
-}
+@import 'yamanote.common';
 
 .controls {
   height: 80px;
@@ -42,50 +38,4 @@ body {
 
 .output {
   height: calc(100vh - 80px);
-  text-align: center;
-}
-
-.output-svg {
-  height: 100%;
-  
-  .line {
-    stroke: #8de75c;
-    stroke-width: 30;
-    fill: none;
-  }
-
-  .station {
-    stroke: #8de75c;
-    stroke-width: 10;
-    fill: #ffffff;
-  }
-
-  .label {
-    font: 900 35px 'Noto Sans JP';
-    letter-spacing: -1px;
-  }
-
-  .bottom .label {
-    text-anchor: middle;
-    transform: translateY(110px);
-  }
-
-  .right .label {
-    text-anchor: start;
-    transform: translate(70px, 12px);
-  }
-
-  .top .label {
-    text-anchor: middle;
-    transform: translateY(-80px);
-  }
-
-  .left .label {
-    text-anchor: end;
-    transform: translate(-75px, 12px);
-  }
-
-  .trains .train {
-    transform: scale(0.4) translate(-77px, -76.5px);
-  }  
 }

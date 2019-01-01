@@ -1,0 +1,18 @@
+@import 'yamanote.common';
+
+.time {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -100px;
+  width: 200px;
+  line-height: 100px;
+  text-align: center;
+  font-size: 60px;
+  font-weight: 900;
+}
+
+.output {
+  height: 100vh;
+}
